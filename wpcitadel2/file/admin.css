@@ -1,0 +1,25 @@
+#cdlmenu .big-button {
+	padding:1em;
+	margin:1em;
+	display:inline-block;
+	height:100%;
+}
+#cdlmenu .postbox {
+	width:46%;
+	float:left;
+	margin:0.5em;
+	padding:0.5em;
+}
+#cdlmenu .postbox input[type=submit] {
+	float:left;
+}
+#cdlmenu .img-button {
+	display:inline-block;
+	padding:1px;
+	border:none;
+}
+#cdlmenu .checkboxes p {
+	display:inline;
+	width:33%;
+	float:left;
+}

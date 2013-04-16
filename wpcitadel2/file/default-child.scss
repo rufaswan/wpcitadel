@@ -1,0 +1,328 @@
+// Default SCSS (Sassy CSS) for WP Citadel
+// Author by Rufas
+//
+// ---------------------------------------------------------------
+// ------ standards cross browsers ------
+// ---------------------------------------------------------------
+@mixin cross-vert-gradient( $topcolor:#fff, $bottomcolor:#000 )
+{
+	background-color: $bottomcolor;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($bottomcolor), to($topcolor));
+	background: -webkit-linear-gradient(top, $topcolor, $bottomcolor);
+	background:	-moz-linear-gradient(top, $topcolor, $bottomcolor);
+	background:	 -ms-linear-gradient(top, $topcolor, $bottomcolor);
+	background:	  -o-linear-gradient(top, $topcolor, $bottomcolor);
+}
+@mixin cross-horz-gradient( $leftcolor:#fff, $rightcolor:#000 )
+{
+	background-color: $rightcolor;
+	background: -webkit-gradient(linear, left top, right top, from($rightcolor), to($leftcolor));
+	background: -webkit-linear-gradient(left, $leftcolor, $rightcolor);
+	background:	-moz-linear-gradient(left, $leftcolor, $rightcolor);
+	background:	 -ms-linear-gradient(left, $leftcolor, $rightcolor);
+	background:	  -o-linear-gradient(left, $leftcolor, $rightcolor);
+}
+@mixin cross-radius( $radius:20px )
+{
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+		-ms-border-radius: $radius;
+		 -o-border-radius: $radius;
+}
+@mixin cross-border( $top:1px, $right:1px, $bottom:1px, $left:1px, $color:#ccc, $style:solid )
+{
+	border-top:	$top	$color $style;
+	border-bottom: $bottom $color $style;
+	border-left:   $left   $color $style;
+	border-right:  $right  $color $style;
+}
+// ---------------------------------------------------------------
+// ------ WordPress Core ------
+// ---------------------------------------------------------------
+.alignnone,
+a img.alignnone,
+.wp-caption.alignnone {
+	margin: 0.5em;
+}
+.aligncenter,
+div.aligncenter,
+a img.aligncenter {
+	display: block;
+	margin: 0.5em auto;
+	text-align: center;
+}
+.alignright,
+a img.alignright,
+.wp-caption.alignright {
+	float: right;
+	margin: 0 0 0.5em 0.5em;
+	text-align: right;
+}
+.alignleft,
+a img.alignleft,
+.wp-caption.alignleft {
+	float: left;
+	margin: 0 0.5em 0.5em 0;
+	text-align: left;
+}
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 96%;
+	padding: 0.5em;
+	text-align: center;
+
+	img {
+		border: 0 none;
+		height: auto;
+		margin: 0;
+		max-width: 98.5%;
+		padding: 0;
+		width: auto;
+	}
+	p.wp-caption-text {
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0;
+		padding: 0 0.5em 0.5em;
+	}
+}
+// ---------------------------------------------------------------
+// ------ general ------
+// ---------------------------------------------------------------
+.skip-link,
+.screen-reader-text {
+	position:absolute;
+	right:900em;
+}
+.citadel-btn {
+	@include cross-radius(20px);
+	@include cross-vert-gradient(#e81c1d, #f88686);
+	display:block;
+	padding:1em;
+	color:#fff;
+	font-weight:bold;
+}
+#message {
+	padding:0 1em;
+	border:2px #ccc solid;
+	background:#f88686;
+	margin:1em 0;
+}
+// ---------------------------------------------------------------
+// ------ header ------
+// ---------------------------------------------------------------
+#misc { background-color:#ccc; }
+header {
+	@include cross-horz-gradient(#2f2727, #1a82f7);
+	color:#fff;
+	padding:1em 0.3em;
+	overflow:hidden;
+
+	a {
+		color:#fff;
+		text-decoration:none;
+	}
+	h1 {
+		padding:0;
+		margin:0;
+	}
+	#leftheader { float:left; }
+	#rightheader { float:right; }
+}
+// ---------------------------------------------------------------
+// ------ nav ------
+// ---------------------------------------------------------------
+nav {
+	position:relative;
+	border-bottom:2px #ccc solid;
+
+	a {
+		color:#000;
+		text-decoration:none;
+	}
+	ul {
+		list-style: none outside none;
+		margin:0;
+		padding:1em 0;
+
+		li {
+			display:inline;
+			padding:1em;
+			margin:0;
+			border-right:2px #ccc solid;
+			position:relative;
+		}
+		li:hover { background:#ccc; }
+
+		ul {
+			display:none;
+			position:absolute;
+			top:2em;
+			left:0.2em;
+
+			li {
+				display:block;
+				border:none;
+				white-space:nowrap;
+				background:#fff;
+				@include cross-border(1px, 2px, 1px, 2px, #ccc, solid);
+			}
+		}
+	}
+}
+.no-js nav ul li:hover ul { display:block; }
+// ---------------------------------------------------------------
+// ------ content ------
+// ---------------------------------------------------------------
+#main-wrapper { clear:both; }
+.multipost {
+	margin:1em 0.3em;
+
+	ul {
+		list-style: none outside none;
+		margin:0;
+		padding:0;
+	}
+	article {
+		@include cross-vert-gradient(#2f2727, #1a82f7);
+		@include cross-radius(15px);
+		height:250px;
+		color:#fff;
+		margin:1em 0;
+	}
+	a { color:#fff; }
+	h1 {
+		padding:0;
+		margin:0;
+
+		a { text-decoration:none; }
+	}
+	article {
+		img {
+			float:left;
+			padding:1em;
+		}
+		div { padding:1em; }
+	}
+}
+.singlephp {
+	margin:1em auto;
+	width:90%;
+
+	article {
+		img {
+			padding:1em;
+			margin:0 auto;
+			display:block;
+		}
+		h1 {
+			margin-top:0;
+
+			a {
+				color:#000;
+				text-decoration:none;
+			}
+		}
+	}
+	aside img { padding:0 0.5em; }
+}
+// ---------------------------------------------------------------
+// ------ footer ------
+// ---------------------------------------------------------------
+footer {
+	border-top:2px #ccc solid;
+	clear:both;
+	font-size:0.8em;
+	overflow:hidden;
+	padding:1em;
+
+	p { margin:0; }
+	#leftfooter {
+		text-align:left;
+		float:left;
+	}
+	#rightfooter {
+		text-align:right;
+		float:right;
+	}
+}
+// ---------------------------------------------------------------
+// ------ searchform ------
+// ---------------------------------------------------------------
+#search_form {
+	margin:1em;
+	text-align:center;
+
+	input[type=text] {
+		line-height:3em;
+		height:3em;
+		width:88%;
+		text-align:center;
+		border:0.2em #ccc solid;
+	}
+	input[type=submit] {
+		line-height:3em;
+		height:3em;
+		width:10%;
+	}
+}
+// ---------------------------------------------------------------
+// ------ page template - contatform ------
+// ---------------------------------------------------------------
+#contactform {
+	label {
+		display:block;
+		width:100%;
+	}
+
+	input[type=text],
+	input[type=email],
+	textarea {
+		line-height:2em;
+		height:2em;
+		display:block;
+		width:100%;
+		border:2px #ccc solid;
+	}
+	textarea { height:20em; }
+	input[type=submit] { margin:1em auto; }
+}
+// ---------------------------------------------------------------
+// ------ page template - aboutus ------
+// ---------------------------------------------------------------
+#aboutus #googlemap {
+	padding:1em;
+	float:right;
+}
+// ---------------------------------------------------------------
+// ------ page template - countdown ------
+// ---------------------------------------------------------------
+#countdown {
+	text-align:center;
+	padding:1em;
+	background:#ffffe0;
+	border:1px #e6db55 solid;
+
+	#countdownform {
+		margin:0.5em auto;
+		padding:0.5em;
+		width:50%;
+		border:2px #ccc dotted;
+
+		input[type=text],
+		input[type=email] {
+			margin:0.5em auto;
+			padding:0.5em;
+			display:block;
+		}
+		input[type=submit] {
+			margin:0.5em auto;
+			padding:0.5em;
+			display:block;
+			color:#fff;
+			background:#46bcd2;
+		}
+	}
+}

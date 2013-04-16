@@ -1,0 +1,243 @@
+.alignnone, a img.alignnone, .wp-caption.alignnone {
+  margin: 0.5em; }
+
+.aligncenter, div.aligncenter, a img.aligncenter {
+  display: block;
+  margin: 0.5em auto;
+  text-align: center; }
+
+.alignright, a img.alignright, .wp-caption.alignright {
+  float: right;
+  margin: 0 0 0.5em 0.5em;
+  text-align: right; }
+
+.alignleft, a img.alignleft, .wp-caption.alignleft {
+  float: left;
+  margin: 0 0.5em 0.5em 0;
+  text-align: left; }
+
+.wp-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  max-width: 96%;
+  padding: 0.5em;
+  text-align: center; }
+  .wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto; }
+  .wp-caption p.wp-caption-text {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0 0.5em 0.5em; }
+
+.skip-link, .screen-reader-text {
+  position: absolute;
+  right: 900em; }
+
+.citadel-btn {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  background-color: #f88686;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f88686), to(#e81c1d));
+  background: -webkit-linear-gradient(top, #e81c1d, #f88686);
+  background: -moz-linear-gradient(top, #e81c1d, #f88686);
+  background: -ms-linear-gradient(top, #e81c1d, #f88686);
+  background: -o-linear-gradient(top, #e81c1d, #f88686);
+  display: block;
+  padding: 1em;
+  color: #fff;
+  font-weight: bold; }
+
+#message {
+  padding: 0 1em;
+  border: 2px #ccc solid;
+  background: #f88686;
+  margin: 1em 0; }
+
+#misc {
+  background-color: #ccc; }
+
+header {
+  background-color: #1a82f7;
+  background: -webkit-gradient(linear, left top, right top, from(#1a82f7), to(#2f2727));
+  background: -webkit-linear-gradient(left, #2f2727, #1a82f7);
+  background: -moz-linear-gradient(left, #2f2727, #1a82f7);
+  background: -ms-linear-gradient(left, #2f2727, #1a82f7);
+  background: -o-linear-gradient(left, #2f2727, #1a82f7);
+  color: #fff;
+  padding: 1em 0.3em;
+  overflow: hidden; }
+  header a {
+    color: #fff;
+    text-decoration: none; }
+  header h1 {
+    padding: 0;
+    margin: 0; }
+  header #leftheader {
+    float: left; }
+  header #rightheader {
+    float: right; }
+
+nav {
+  position: relative;
+  border-bottom: 2px #ccc solid; }
+  nav a {
+    color: #000;
+    text-decoration: none; }
+  nav ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 1em 0; }
+    nav ul li {
+      display: inline;
+      padding: 1em;
+      margin: 0;
+      border-right: 2px #ccc solid;
+      position: relative; }
+    nav ul li:hover {
+      background: #ccc; }
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 2em;
+      left: 0.2em; }
+      nav ul ul li {
+        display: block;
+        border: none;
+        white-space: nowrap;
+        background: #fff;
+        border-top: 1px #ccc solid;
+        border-bottom: 1px #ccc solid;
+        border-left: 2px #ccc solid;
+        border-right: 2px #ccc solid; }
+
+.no-js nav ul li:hover ul {
+  display: block; }
+
+#main-wrapper {
+  clear: both; }
+
+.multipost {
+  margin: 1em 0.3em; }
+  .multipost ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0; }
+  .multipost article {
+    background-color: #1a82f7;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2f2727));
+    background: -webkit-linear-gradient(top, #2f2727, #1a82f7);
+    background: -moz-linear-gradient(top, #2f2727, #1a82f7);
+    background: -ms-linear-gradient(top, #2f2727, #1a82f7);
+    background: -o-linear-gradient(top, #2f2727, #1a82f7);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    height: 250px;
+    color: #fff;
+    margin: 1em 0; }
+  .multipost a {
+    color: #fff; }
+  .multipost h1 {
+    padding: 0;
+    margin: 0; }
+    .multipost h1 a {
+      text-decoration: none; }
+  .multipost article img {
+    float: left;
+    padding: 1em; }
+    .multipost article div {
+      padding: 1em; }
+
+.singlephp {
+  margin: 1em auto;
+  width: 90%; }
+  .singlephp article img {
+    padding: 1em;
+    margin: 0 auto;
+    display: block; }
+    .singlephp article h1 {
+      margin-top: 0; }
+      .singlephp article h1 a {
+        color: #000;
+        text-decoration: none; }
+  .singlephp aside img {
+    padding: 0 0.5em; }
+
+footer {
+  border-top: 2px #ccc solid;
+  clear: both;
+  font-size: 0.8em;
+  overflow: hidden;
+  padding: 1em; }
+  footer p {
+    margin: 0; }
+  footer #leftfooter {
+    text-align: left;
+    float: left; }
+  footer #rightfooter {
+    text-align: right;
+    float: right; }
+
+#search_form {
+  margin: 1em;
+  text-align: center; }
+  #search_form input[type=text] {
+    line-height: 3em;
+    height: 3em;
+    width: 88%;
+    text-align: center;
+    border: 0.2em #ccc solid; }
+  #search_form input[type=submit] {
+    line-height: 3em;
+    height: 3em;
+    width: 10%; }
+
+#contactform label {
+  display: block;
+  width: 100%; }
+  #contactform input[type=text], #contactform input[type=email], #contactform textarea {
+    line-height: 2em;
+    height: 2em;
+    display: block;
+    width: 100%;
+    border: 2px #ccc solid; }
+  #contactform textarea {
+    height: 20em; }
+  #contactform input[type=submit] {
+    margin: 1em auto; }
+
+#aboutus #googlemap {
+  padding: 1em;
+  float: right; }
+
+#countdown {
+  text-align: center;
+  padding: 1em;
+  background: #ffffe0;
+  border: 1px #e6db55 solid; }
+  #countdown #countdownform {
+    margin: 0.5em auto;
+    padding: 0.5em;
+    width: 50%;
+    border: 2px #ccc dotted; }
+    #countdown #countdownform input[type=text], #countdown #countdownform input[type=email] {
+      margin: 0.5em auto;
+      padding: 0.5em;
+      display: block; }
+    #countdown #countdownform input[type=submit] {
+      margin: 0.5em auto;
+      padding: 0.5em;
+      display: block;
+      color: #fff;
+      background: #46bcd2; }
