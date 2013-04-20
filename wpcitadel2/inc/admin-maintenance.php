@@ -13,7 +13,7 @@ if ( isset($_POST['reset_options']) && wp_verify_nonce($_POST['wp-nonce']) )
 //---------------------------------------------------------------
 if ( isset($_POST['delete_revisions']) && wp_verify_nonce($_POST['wp-nonce']) )
 {
-	$wpdb->query( 'DELETE FROM '.$wpdb->prefix.'posts WHERE post_type = "revision";' );
+	$wpdb->query( 'DELETE FROM '.$wpdb->posts.' WHERE post_type = "revision";' );
 	echo "<div id='message' class='updated fade'><p><b>Revision Posts Removed</b></p></div>";
 }
 //---------------------------------------------------------------

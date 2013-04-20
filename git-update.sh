@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ $# = 0 ] && { echo "please type a comment"; exit; }
+[ $# = 0 ] && { echo "please type a comment within quotes"; exit; }
 
 git add *
 git remote rm origin

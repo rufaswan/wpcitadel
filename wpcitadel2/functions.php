@@ -148,6 +148,7 @@ class citadel_admin
 	// misc menu page
 	function phpcode()			{	include(TEMPLATEPATH . '/inc/admin-phpcode.php'); }
 	function maintenance()		{	include(TEMPLATEPATH . '/inc/admin-maintenance.php'); }
+	function brokenlinks()		{	include(TEMPLATEPATH . '/inc/admin-brokenlinks.php'); }
 	function feedback()			{	include(TEMPLATEPATH . '/inc/admin-feedback.php');	}
 	function license()			{	include(TEMPLATEPATH . '/inc/admin-license.php'); }
 }

@@ -16,6 +16,7 @@ $subloop = array(
 	array('Stylesheet', 'sass'),
 	array('PHP Shortcode', 'phpcode'),
 	array('Maintenance', 'maintenance'),
+	array('Broken Links', 'brokenlinks'),
 	array('Feedback', 'feedback'),
 	array('License', 'license')
 );
