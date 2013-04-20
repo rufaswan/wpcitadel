@@ -17,7 +17,7 @@
 <?php
 $script = array(
 	array('WordPress',			'http://wordpress.org',						'3.5.1',	'GPL 2.0'),
-	array('WP Citadel',			'http://wpcitadel.com',						'2.0',		'GPL 2.0'),
+	array('WP Citadel',			'https://github.com/rufaswan/wpcitadel',	'2.0',		'GPL 2.0'),
 	array('HTML5 Boilerplate',	'http://html5boilerplate.com',				'4.1.0',	''),
 	array('scssphp',			'http://leafo.net/scssphp/',				'0.0.5',	'GPL 3.0 / MIT License'),
 	array('jQuery',				'http://jquery.com',						'1.9.1',	'MIT License'),
