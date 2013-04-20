@@ -19,7 +19,7 @@ if ( isset($_POST['cformsubmit']) )
 			$sub = sanitize_text_field( $_POST['csubject'] );
 			$msg = sanitize_text_field( $_POST['cmessage'] );
 
-			mail($to, $sub, $msg, $header);
+			wp_mail($to, $sub, $msg, $header);
 			$msg .= "<p>Email sent. Thank you.</p>";
 		}
 	}
