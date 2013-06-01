@@ -1,12 +1,12 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
-global $ccache, $user_identity, $user_email;
+global $user_identity, $user_email;
 
 //----------------------------------------------------------------
 ?>
 <div id='cdlmenu' class='wrap cdlpage'>
 <h2><?php _e('Send Feedback', 'wpcitadel'); ?></h2>
-<form method="post" action="<?php echo $ccache['template_url'].'/file/default-feedback.php'; ?>" >
+<form method="post" action="<?php echo $this->ccache['base_url'].'/file/default-feedback.php'; ?>" >
 <input name='wp-nonce' type='hidden' value='<?php echo wp_create_nonce(); ?>' />
 
 <p><?php _e('Subject', 'wpcitadel'); ?></p>
@@ -18,10 +18,10 @@ global $ccache, $user_identity, $user_email;
 <p class='submit'>
 	<input type='hidden' name='user_email' value='<?php echo $user_email; ?>' />
 	<input type='hidden' name='user_identity' value='<?php echo $user_identity; ?>' />
-	<input type='hidden' name='siteurl' value='<?php echo $ccache['siteurl']; ?>' />
+	<input type='hidden' name='siteurl' value='<?php echo $this->ccache['siteurl']; ?>' />
 
 	<button type='submit' name="sendcdl" class="img-button">
-		<img src='<?php echo $ccache['template_url'].'/file/send-feedback.png'; ?>' alt='Send Feedback &amp; Donate' />
+		<img src='<?php echo $this->ccache['base_url'].'/file/send-feedback.png'; ?>' alt='Send Feedback &amp; Donate' />
 	</button>
 </p>
 

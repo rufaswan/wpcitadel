@@ -1,4 +1,4 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
 ?>
 <div id='cdlmenu' class='wrap license'>

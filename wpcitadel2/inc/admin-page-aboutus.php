@@ -1,8 +1,7 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
 // update options for use in this function
 $this->init();
-global $ccache;
 $template = 'page-aboutus.php';
 
 if ( isset($_POST['createpage']) && wp_verify_nonce($_POST['wp-nonce']) )
@@ -52,7 +51,7 @@ $overview = ( $this->options['about_desc'] ) ? $this->html_decode( $this->option
 <form method="post" action="<?php echo $_SERVER["REQUEST_URI"]; ?>" >
 <input name='wp-nonce' type='hidden' value='<?php echo wp_create_nonce(); ?>' />
 
-<div id='message' class='updated'>
+<div class='msgbox'>
 <?php if ( $pages ) : ?>
 	<p>PAGE : <?php foreach ( $pages as $p )
 		echo "<a href='" .$p->guid. "' rel='nofollow'>" .$p->post_title. "</a> ";

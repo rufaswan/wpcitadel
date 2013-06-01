@@ -1,4 +1,18 @@
 <?php
+if ( $citadel_options['sitelocked'] )
+{
+	$user_ID = get_current_user_id();
+	$lockuser = $citadel->explode(',', $citadel_options['sitelockuser']);
+	if ( in_array($user_ID, $lockuser) )
+		$citadel_locked = 0;
+	else
+		if ( current_time('timestamp') > $citadel_options['cnt_time'] )
+			$citadel_locked = 0;
+	unset( $user_ID, $lockuser );
+}
+else
+	$citadel_locked = 0;
+
 if ( $citadel_options['noautop'] )
 	remove_filter('the_content', 'wpautop');
 if ( $citadel_options['nosmartq'] )
@@ -20,9 +34,11 @@ function citadel_scripts()
 {
 	global $ccache, $citadel_options;
 
-	wp_register_style('cdl_css', $ccache['template_url'] . '/extern/extern-css.php?q=' .$citadel_options['load_css']);
+	wp_enqueue_script( 'comment-reply' );
+
+	wp_register_style('cdl_css', $ccache['base_url'] . '/extern/extern-css.php?q=' .$citadel_options['load_css']);
 	wp_enqueue_style('cdl_css');
-	wp_register_script('cdl_js', $ccache['template_url'] . '/extern/extern-js.php?q=' .$citadel_options['load_js']);
+	wp_register_script('cdl_js', $ccache['base_url'] . '/extern/extern-js.php?q=' .$citadel_options['load_js']);
 	wp_enqueue_script('cdl_js');
 
 	wp_register_style('cdl_child_css', $ccache['child_url'] . '/child.css', array('cdl_css'));
@@ -36,8 +52,8 @@ function citadel_wphead()
 {
 	global $ccache, $citadel, $citadel_options;
 
-	echo "<link rel='icon' href='" . $ccache['child_url'] . "/img/favicon.ico' type='image/x-icon' />\n";
-	echo "<link rel='shortcut icon' href='" . $ccache['child_url'] . "/img/favicon.ico' type='image/x-icon' />\n";
+	//echo "<link rel='icon' href='" . $ccache['child_url'] . "/img/favicon.ico' type='image/x-icon' />\n";
+	//echo "<link rel='shortcut icon' href='" . $ccache['child_url'] . "/img/favicon.ico' type='image/x-icon' />\n";
 
 	echo $citadel->html_decode( $citadel_options['extra_head'] );
 }

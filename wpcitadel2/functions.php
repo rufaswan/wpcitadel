@@ -1,7 +1,21 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
+
+$ccache = array(
+	'home'			=> get_option('home') . '/',
+	'siteurl'		=> get_option('siteurl'),
+	'permalink'		=> get_option('permalink_structure'),
+	'blogname'		=> esc_attr( get_bloginfo( 'name', 'display' ) ),
+	'blogtag'		=> get_bloginfo( 'description', 'display' ),
+	'base_path'		=> get_template_directory(),
+	'base_url'		=> get_template_directory_uri(),
+	'child_path'	=> get_stylesheet_directory(),
+	'child_url'		=> get_stylesheet_directory_uri(),
+	'rss2_url'		=> get_bloginfo('rss2_url'),
+	''				=> ''
+);
 
 // collection of smaller functions to be used within bigger functions
-include(TEMPLATEPATH . '/inc/misc.php');
+include($ccache['base_path'] . '/inc/misc.php');
 
 //===============================================================
 // one class to control them all
@@ -11,11 +25,13 @@ class citadel_admin
 	private $opt_name;		private $options;
 	private $code_name;		private $phpcodes;
 	private $sass_name;		private $sass;
-	private $pages;
+	private $pages;			private $ccache;
 
 	// constructor, also act as initiliazer
 	function citadel_admin()
 	{
+		global $ccache;
+		$this->ccache = $ccache;
 		$this->opt_name		= "citadel_options";
 		$this->code_name	= "citadel_phpcodes";
 		$this->sass_name	= "citadel_sass";
@@ -24,7 +40,7 @@ class citadel_admin
 	}
 	//------------------------------------------------------------
 	// update defaults with options from database
-	private function init()		{	include(TEMPLATEPATH . '/inc/admin-init.php');	}
+	private function init()		{	include($this->ccache['base_path'] . '/inc/admin-init.php');	}
 
 	// create page shortcut
 	private function create_page($title, $slug, $template, $content = 'null')
@@ -105,11 +121,10 @@ class citadel_admin
 	// post thumbnail
 	function featured_img()
 	{
-		global $ccache;
 		if ( has_post_thumbnail() )
 			the_post_thumbnail( array(200,200) );
 		else
-			echo "<img src='".$ccache['template_url']."/img/featured-200.jpg' width='200' height='200' alt='featured' />";
+			echo "<img src='".$this->ccache['base_url']."/img/featured-200.jpg' width='200' height='200' alt='featured' />";
 	}
 
 	function multipost()
@@ -134,29 +149,29 @@ class citadel_admin
 	//------------------------------------------------------------
 
 	// wp-admin related
-	function admin_init()		{	include(TEMPLATEPATH . '/inc/admin-dash-init.php'); }
-	function admin_menu()		{	include(TEMPLATEPATH . '/inc/admin-dash-menu.php'); }
-	function general()			{	include(TEMPLATEPATH . '/inc/admin-general.php'); }
-	function sass()				{	include(TEMPLATEPATH . '/inc/admin-sass.php'); }
+	function admin_init()		{	include($this->ccache['base_path'] . '/inc/admin-dash-init.php'); }
+	function admin_menu()		{	include($this->ccache['base_path'] . '/inc/admin-dash-menu.php'); }
+	function general()			{	include($this->ccache['base_path'] . '/inc/admin-general.php'); }
+	function countdown()		{	include($this->ccache['base_path'] . '/inc/admin-countdown.php'); }
+	function sass()				{	include($this->ccache['base_path'] . '/inc/admin-sass.php'); }
 
 	// page template related
-	function page_countdown()	{	include(TEMPLATEPATH . '/inc/admin-page-countdown.php'); }
-	function page_contactform()	{	include(TEMPLATEPATH . '/inc/admin-page-contactform.php'); }
-	function page_aboutus()		{	include(TEMPLATEPATH . '/inc/admin-page-aboutus.php'); }
-	function page_sitemap()		{	include(TEMPLATEPATH . '/inc/admin-page-sitemap.php'); }
+	function page_contactform()	{	include($this->ccache['base_path'] . '/inc/admin-page-contactform.php'); }
+	function page_aboutus()		{	include($this->ccache['base_path'] . '/inc/admin-page-aboutus.php'); }
+	function page_sitemap()		{	include($this->ccache['base_path'] . '/inc/admin-page-sitemap.php'); }
 
 	// misc menu page
-	function phpcode()			{	include(TEMPLATEPATH . '/inc/admin-phpcode.php'); }
-	function maintenance()		{	include(TEMPLATEPATH . '/inc/admin-maintenance.php'); }
-	function brokenlinks()		{	include(TEMPLATEPATH . '/inc/admin-brokenlinks.php'); }
-	function feedback()			{	include(TEMPLATEPATH . '/inc/admin-feedback.php');	}
-	function license()			{	include(TEMPLATEPATH . '/inc/admin-license.php'); }
+	function phpcode()			{	include($this->ccache['base_path'] . '/inc/admin-phpcode.php'); }
+	function maintenance()		{	include($this->ccache['base_path'] . '/inc/admin-maintenance.php'); }
+	function brokenlinks()		{	include($this->ccache['base_path'] . '/inc/admin-brokenlinks.php'); }
+	function feedback()			{	include($this->ccache['base_path'] . '/inc/admin-feedback.php');	}
+	function license()			{	include($this->ccache['base_path'] . '/inc/admin-license.php'); }
 }
 //===============================================================
 $citadel = new citadel_admin;
 $citadel_options	= $citadel->get_options('options');
 $citadel_phpcodes	= $citadel->get_options('phpcodes');
 //===============================================================
-include(TEMPLATEPATH . '/inc/class-sharebtn.php');
-include(TEMPLATEPATH . '/inc/class-recursive.php');
-include(TEMPLATEPATH . '/inc/misc2.php');
+include($ccache['base_path'] . '/inc/class-sharebtn.php');
+include($ccache['base_path'] . '/inc/class-recursive.php');
+include($ccache['base_path'] . '/inc/misc2.php');

@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or die('No direct script access.'); ?>
+
 <footer>
 	<section id='leftfooter'>
 		<p>&copy; <?php echo date('Y'); ?> <?php echo $ccache['blogname']; ?>. All rights reserved.</p>
@@ -21,7 +23,7 @@
 			if ( $citadel_options['about_'.$s] )
 			{
 				echo "<a href='".$citadel_options['about_'.$s]."'>";
-				echo "<img src='".$ccache['template_url']."/img/".$s.".png' alt='".$s."' width='48' height='48' rel='nofollow' /></a>\n";
+				echo "<img src='".$ccache['base_url']."/img/".$s.".png' alt='".$s."' width='48' height='48' rel='nofollow' /></a>\n";
 			}
 		}
 		unset($social);

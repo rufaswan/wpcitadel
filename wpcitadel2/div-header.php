@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or die('No direct script access.'); ?>
+
 <div id="misc">
 	<p class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wpcitadel' ); ?>"><?php _e( 'Skip to content', 'wpcitadel' ); ?></a></p>
 	<!--[if lt IE 7]>

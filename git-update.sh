@@ -2,7 +2,10 @@
 
 [ $# = 0 ] && { echo "please type a comment within quotes"; exit; }
 
+rm -vf *.zip
+zip -r wpcitadel2.zip wpcitadel2
 git add *
+git rm $(git ls-files --deleted)
 git remote rm origin
 git remote add origin git@github.com:rufaswan/wpcitadel.git
 git commit -m "$1"

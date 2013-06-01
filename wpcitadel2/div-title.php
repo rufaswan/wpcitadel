@@ -1,3 +1,5 @@
+<?php defined('ABSPATH') or die('No direct script access.'); ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>

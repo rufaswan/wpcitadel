@@ -1,11 +1,10 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
-global $ccache;
-require( TEMPLATEPATH . '/extern/php/scssphp/scss.inc.php' );
+require( $this->ccache['base_path'] . '/extern/php/scssphp/scss.inc.php' );
 
 // update options for use in this function
 $this->init();
-$cssfile = STYLESHEETPATH . '/child.css';
+$cssfile = $this->ccache['child_path'] . '/child.css';
 $phpsass = new scssc;
 $compcss = $phpsass->compile( $this->sass );
 
@@ -13,7 +12,7 @@ if ( ( isset($_POST['save']) || isset($_POST['publish']) || isset($_POST['reset'
 	&& wp_verify_nonce($_POST['wp-nonce']) )
 {
 	if ( isset($_POST['reset']) )
-		$this->sass = file_get_contents( TEMPLATEPATH.'/file/default-child.scss' );
+		$this->sass = file_get_contents( $this->ccache['base_path'].'/file/default-child.scss' );
 	else
 		$this->sass = $_POST['sass'];
 

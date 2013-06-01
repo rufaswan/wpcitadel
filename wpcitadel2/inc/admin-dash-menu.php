@@ -1,4 +1,4 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
 $this->pages = array();
 
@@ -9,10 +9,10 @@ $hook = add_menu_page('Citadel Menu', 'Citadel Menu',
 $this->pages[] = $hook;
 
 $subloop = array(
-	array('Page: Count Down', 'page_countdown'),
 	array('Page: Contact Us', 'page_contactform'),
 	array('Page: About Us', 'page_aboutus'),
 	array('Page: Sitemap', 'page_sitemap'),
+	array('Count Down', 'countdown'),
 	array('Stylesheet', 'sass'),
 	array('PHP Shortcode', 'phpcode'),
 	array('Maintenance', 'maintenance'),

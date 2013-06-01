@@ -1,4 +1,4 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
 $css = array('normalize','qunit');
 $js = array('jquery','modernizr','qunit','jquery-countdown','jquery-mobile');

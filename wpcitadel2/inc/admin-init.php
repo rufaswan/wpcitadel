@@ -1,9 +1,11 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
 // set the defaults
 $default_options = array(
 	'noautop' => false,
 	'nosmartq' => false,
+	'sitelocked' => false,
+	'sitelockuser' => '',
 	'load_js' => 'jquery,modernizr,jquery-countdown',
 	'load_css' => 'normalize',
 	'extra_head' => '',
@@ -44,7 +46,7 @@ $this->phpcodes = ( empty($codes) ) ? array() : $codes;
 //----------------------------------------------------------------
 // READ MORE: PHP heredoc / nowdoc syntax
 $sass = get_option($this->sass_name);
-$this->sass = ( empty($sass) ) ? file_get_contents( TEMPLATEPATH.'/file/default-child.scss' ) : $sass;
+$this->sass = ( empty($sass) ) ? file_get_contents( $this->ccache['base_path'].'/file/default-child.scss' ) : $sass;
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 

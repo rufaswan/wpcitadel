@@ -25,38 +25,45 @@ if ( isset($_POST['cformsubmit']) )
 	}
 }
 
-include (TEMPLATEPATH . '/div-title.php');
-include (TEMPLATEPATH . '/div-header.php');
+include ($ccache['base_path'] . '/div-title.php');
+include ($ccache['base_path'] . '/div-header.php');
 ?>
 
+<?php
+if ( $citadel_locked ) :
+	include ($ccache['base_path'] . '/div-countdown.php');
+else :
+?>
 <div id='main-wrapper' class='singlephp singlepage'>
 <section id='content'>
-<article id='contactform'>
+	<article id='contactform'>
 
-<?php if ( $msg ) : ?>
-	<div id='message'><?php echo $msg; ?></div>
-<?php endif; ?>
+	<?php if ( $msg ) : ?>
+		<div id='message'><?php echo $msg; ?></div>
+	<?php endif; ?>
 
-<form action='' method='post'>
-	<label><?php _e('Name', 'wpcitadel'); ?></label>
-	<input type='text' name='cname' value='' required='required' />
+	<form action='' method='post'>
+		<label><?php _e('Name', 'wpcitadel'); ?></label>
+		<input type='text' name='cname' value='' required='required' />
 
-	<label><?php _e('Email', 'wpcitadel'); ?></label>
-	<input type='email' name='cemail' value='' required='required' />
+		<label><?php _e('Email', 'wpcitadel'); ?></label>
+		<input type='email' name='cemail' value='' required='required' />
 
-	<label><?php _e('Subject', 'wpcitadel'); ?></label>
-	<input type='text' name='csubject' value='' required='required' />
+		<label><?php _e('Subject', 'wpcitadel'); ?></label>
+		<input type='text' name='csubject' value='' required='required' />
 
-	<label><?php _e('Message', 'wpcitadel'); ?></label>
-	<textarea name='cmessage' cols='20' rows='10' required='required'></textarea>
+		<label><?php _e('Message', 'wpcitadel'); ?></label>
+		<textarea name='cmessage' cols='20' rows='10' required='required'></textarea>
 
-	<input type='submit' name='cformsubmit' class='citadel-btn' value='Submit' />
-</form>
+		<input type='submit' name='cformsubmit' class='citadel-btn' value='Submit' />
+	</form>
 
-</article>
+	</article>
+
 </section>
 </div>
+<?php endif; ?>
 
 <?php
-include (TEMPLATEPATH . '/div-footer.php');
+include ($ccache['base_path'] . '/div-footer.php');
 ?>

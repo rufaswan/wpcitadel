@@ -1,4 +1,4 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
 class citadel_share
 {
@@ -11,7 +11,7 @@ class citadel_share
 		global $ccache;
 		$this->title	= urlencode( get_the_title() );
 		$this->url		= urlencode( get_permalink() );
-		$this->img		= $ccache['template_url'] . "/img";
+		$this->img		= $ccache['base_url'] . "/img";
 	}
 
 	function facebook()

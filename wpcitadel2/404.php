@@ -1,6 +1,6 @@
 <?php
-include (TEMPLATEPATH . '/div-title.php');
-include (TEMPLATEPATH . '/div-header.php');
+include ($ccache['base_path'] . '/div-title.php');
+include ($ccache['base_path'] . '/div-header.php');
 ?>
 
 <div id='main-wrapper' class='singlephp'>
@@ -15,5 +15,5 @@ include (TEMPLATEPATH . '/div-header.php');
 </div>
 
 <?php
-include (TEMPLATEPATH . '/div-footer.php');
+include ($ccache['base_path'] . '/div-footer.php');
 ?>

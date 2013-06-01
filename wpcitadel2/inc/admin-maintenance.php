@@ -1,6 +1,6 @@
-<?php defined('TEMPLATEPATH') or die('No direct script access.');
+<?php defined('ABSPATH') or die('No direct script access.');
 
-global $ccache, $wpdb;
+global $wpdb;
 //---------------------------------------------------------------
 // upperland - no return / notice only submits
 //---------------------------------------------------------------
