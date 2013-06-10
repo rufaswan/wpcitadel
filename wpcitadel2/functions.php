@@ -13,10 +13,7 @@ $ccache = array(
 	'rss2_url'		=> get_bloginfo('rss2_url'),
 	''				=> ''
 );
-<<<<<<< HEAD
 $ccache['is_child'] = ( $ccache['base_path'] == $ccache['child_path'] ) ? 1 : 0;
-=======
->>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 
 // collection of smaller functions to be used within bigger functions
 include($ccache['base_path'] . '/inc/misc.php');
@@ -122,7 +119,6 @@ class citadel_admin
 		return (int)($time) ." seconds ". $rel;
 	}
 
-<<<<<<< HEAD
 	function getfile( $file, $getpath = false )
 	{
 		if ( $this->ccache['is_child'] )
