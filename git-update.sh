@@ -1,5 +1,15 @@
 #!/bin/bash
 
+function wptheme()
+{
+	for i in "$@"; do
+		http="$HOME/Web-Server/$i/wp-content/themes/"
+		rm -vfr "$http"wpcitadel2
+		ln -s $(readlink -f ./wpcitadel2) "$http"
+	done
+}
+wptheme wp34 wp35
+
 [ $# = 0 ] && { echo "please type a comment within quotes"; exit; }
 
 rm -vf *.zip

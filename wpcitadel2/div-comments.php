@@ -13,6 +13,28 @@
 
 <?php if ( have_comments() ) : ?>
 
+<<<<<<< HEAD
+	<?php if ( !empty($comments_by_type['comment']) ) : ?>
+	<h3 id="comments"><?php _e('Comments', 'wpcitadel' ); ?></h3>
+		<ol class="commentlist">
+			<?php wp_list_comments('type=comment'); ?>
+		</ol>
+	<?php endif; ?>
+
+	<?php if ( !empty($comments_by_type['pingback']) ) : ?>
+	<h3 id="pingbacks"><?php _e('Pingbacks', 'wpcitadel' ); ?></h3>
+		<ol class="pingbacklist">
+			<?php wp_list_comments('type=pingback'); ?>
+		</ol>
+	<?php endif; ?>
+
+	<?php if ( !empty($comments_by_type['trackback']) ) : ?>
+	<h3 id="trackbacks"><?php _e('Trackbacks', 'wpcitadel' ); ?></h3>
+		<ol class="trackbacklist">
+			<?php wp_list_comments('type=trackback'); ?>
+		</ol>
+	<?php endif; ?>
+=======
 	<h3 id="comments-title"><?php
 		printf(
 			_n( 'One Response to %2$s', '%1$s Responses to %2$s',
@@ -45,6 +67,7 @@
 		</div>
 	</div><!-- .navigation -->
 	<?php endif; // check for comment navigation ?>
+>>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 
 <?php else : // for have_comments() loop ?>
 

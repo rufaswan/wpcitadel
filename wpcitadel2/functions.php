@@ -13,6 +13,10 @@ $ccache = array(
 	'rss2_url'		=> get_bloginfo('rss2_url'),
 	''				=> ''
 );
+<<<<<<< HEAD
+$ccache['is_child'] = ( $ccache['base_path'] == $ccache['child_path'] ) ? 1 : 0;
+=======
+>>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 
 // collection of smaller functions to be used within bigger functions
 include($ccache['base_path'] . '/inc/misc.php');
@@ -118,13 +122,49 @@ class citadel_admin
 		return (int)($time) ." seconds ". $rel;
 	}
 
+<<<<<<< HEAD
+	function getfile( $file, $getpath = false )
+	{
+		if ( $this->ccache['is_child'] )
+		{
+			$f = basename($file);
+			if ( file_exists( $this->ccache['child_path'] ."/". $f ) )
+			{
+				if ( $getpath )
+					return $this->ccache['child_path'] ."/". $f;
+				else
+					return $this->ccache['child_url'] ."/". $f;
+			}
+			else
+			{
+				if ( $getpath )
+					return $this->ccache['base_path'] . $file;
+				else
+					return $this->ccache['base_url'] . $file;
+			}
+		}
+		else
+		{
+			if ( $getpath )
+				return $this->ccache['base_path'] . $file;
+			else
+				return $this->ccache['base_url'] . $file;
+		}
+	}
+
+=======
+>>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 	// post thumbnail
 	function featured_img()
 	{
 		if ( has_post_thumbnail() )
 			the_post_thumbnail( array(200,200) );
 		else
+<<<<<<< HEAD
+			echo "<img src='".$this->getfile('/img/featured-200.jpg')."' width='200' height='200' alt='featured' />";
+=======
 			echo "<img src='".$this->ccache['base_url']."/img/featured-200.jpg' width='200' height='200' alt='featured' />";
+>>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 	}
 
 	function multipost()

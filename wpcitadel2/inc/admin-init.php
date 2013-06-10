@@ -46,7 +46,11 @@ $this->phpcodes = ( empty($codes) ) ? array() : $codes;
 //----------------------------------------------------------------
 // READ MORE: PHP heredoc / nowdoc syntax
 $sass = get_option($this->sass_name);
+<<<<<<< HEAD
+$this->sass = ( empty($sass) ) ? file_get_contents( $this->getfile('/file/child.scss', 1) ) : $sass;
+=======
 $this->sass = ( empty($sass) ) ? file_get_contents( $this->ccache['base_path'].'/file/default-child.scss' ) : $sass;
+>>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 //----------------------------------------------------------------
 //----------------------------------------------------------------
 

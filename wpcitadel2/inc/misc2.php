@@ -32,6 +32,22 @@ if ( !empty($citadel_phpcodes) )
 //===============================================================
 function citadel_scripts()
 {
+<<<<<<< HEAD
+	global $ccache, $citadel, $citadel_options;
+
+	wp_enqueue_script( 'comment-reply' );
+
+	wp_register_style('citadel_css', $ccache['base_url'] . '/extern/extern-css.php?q=' .$citadel_options['load_css']);
+	wp_enqueue_style('citadel_css');
+	wp_register_script('citadel_js', $ccache['base_url'] . '/extern/extern-js.php?q=' .$citadel_options['load_js']);
+	wp_enqueue_script('citadel_js');
+
+	wp_register_style('citadel_child_css', $ccache['child_url'] . '/child.css', array('citadel_css'));
+	wp_enqueue_style('citadel_child_css');
+
+	wp_register_script('citadel_child_js', $ccache['child_url'] . '/child.js', array('citadel_js'));
+	wp_enqueue_script('citadel_child_js');
+=======
 	global $ccache, $citadel_options;
 
 	wp_enqueue_script( 'comment-reply' );
@@ -45,6 +61,7 @@ function citadel_scripts()
 	wp_enqueue_style('cdl_child_css');
 	wp_register_script('cdl_child_js', $ccache['child_url'] . '/child.js', array('cdl_js'));
 	wp_enqueue_script('cdl_child_js');
+>>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 }
 add_action('wp_enqueue_scripts', 'citadel_scripts');
 //===============================================================
