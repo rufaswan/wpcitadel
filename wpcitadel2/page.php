@@ -16,11 +16,7 @@ else :
 				<h1><a href='<?php the_permalink(); ?>'><?php the_title(); ?></a></h1>
 				<div><?php the_content(); ?></div>
 			</article>
-<<<<<<< HEAD
 			<?php comments_template('/div-comments.php', 1); ?>
-=======
-			<?php comments_template('/div-comments.php'); ?>
->>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</section>

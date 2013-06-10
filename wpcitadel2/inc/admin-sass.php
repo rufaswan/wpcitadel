@@ -4,11 +4,7 @@ require( $this->ccache['base_path'] . '/extern/php/scssphp/scss.inc.php' );
 
 // update options for use in this function
 $this->init();
-<<<<<<< HEAD
 $cssfile = $this->getfile('/child.css', 1);
-=======
-$cssfile = $this->ccache['child_path'] . '/child.css';
->>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 $phpsass = new scssc;
 $compcss = $phpsass->compile( $this->sass );
 
@@ -16,11 +12,7 @@ if ( ( isset($_POST['save']) || isset($_POST['publish']) || isset($_POST['reset'
 	&& wp_verify_nonce($_POST['wp-nonce']) )
 {
 	if ( isset($_POST['reset']) )
-<<<<<<< HEAD
 		$this->sass = file_get_contents( $this->getfile('/file/child.scss', 1) );
-=======
-		$this->sass = file_get_contents( $this->ccache['base_path'].'/file/default-child.scss' );
->>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 	else
 		$this->sass = $_POST['sass'];
 

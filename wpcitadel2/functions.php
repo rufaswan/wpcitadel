@@ -152,19 +152,13 @@ class citadel_admin
 		}
 	}
 
-=======
->>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 	// post thumbnail
 	function featured_img()
 	{
 		if ( has_post_thumbnail() )
 			the_post_thumbnail( array(200,200) );
 		else
-<<<<<<< HEAD
 			echo "<img src='".$this->getfile('/img/featured-200.jpg')."' width='200' height='200' alt='featured' />";
-=======
-			echo "<img src='".$this->ccache['base_url']."/img/featured-200.jpg' width='200' height='200' alt='featured' />";
->>>>>>> 9ab6f9fcb4a24f6c08df046ecf0b17715cd3ac2d
 	}
 
 	function multipost()
