@@ -14,7 +14,7 @@ if ( ( isset($_POST['save']) || isset($_POST['publish']) || isset($_POST['reset'
 	if ( isset($_POST['reset']) )
 		$this->sass = file_get_contents( $this->getfile('/file/child.scss', 1) );
 	else
-		$this->sass = $_POST['sass'];
+		$this->sass = str_replace( array("\\'", '\\"'), '', $_POST['sass'] );
 
 	$compcss = $phpsass->compile( $this->sass );
 	update_option($this->sass_name, $this->sass);
@@ -27,7 +27,7 @@ if ( ( isset($_POST['save']) || isset($_POST['publish']) || isset($_POST['reset'
 		echo "<div id='message' class='updated fade'><p><b>SCSS Saved &amp; Updated CSS File</b></p></div>";
 	}
 	if ( isset($_POST['reset']) )
-		echo "<div id='message' class='updated fade'><p><b>SCSS Reset</b></p></div>";
+		echo "<div id='message' class='updated fade'><p><b>SCSS Reset&#039;d</b></p></div>";
 }
 //----------------------------------------------------------------
 //----------------------------------------------------------------

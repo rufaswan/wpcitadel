@@ -24,6 +24,19 @@ else :
 			<h1>No result found. Sorry :(</h1>
 		<?php endif; ?>
 	</section>
+
+	<?php if ( is_active_sidebar('search-sidebar') ) : ?>
+		<div id="search-sidebar" class="sidebar" >
+			<ul><?php dynamic_sidebar( 'search-sidebar' ); ?></ul>
+		</div> <!-- end search-sidebar -->
+	<?php else : ?>
+		<?php if ( is_active_sidebar('global-sidebar') ) : ?>
+			<div id="global-sidebar" class="sidebar" >
+				<ul><?php dynamic_sidebar( 'global-sidebar' ); ?></ul>
+			</div> <!-- end global-sidebar -->
+		<?php endif; ?>
+	<?php endif; ?>
+
 </div>
 <?php endif; ?>
 

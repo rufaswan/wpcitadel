@@ -20,6 +20,19 @@ else :
 			<?php endwhile; ?>
 		<?php endif; ?>
 	</section>
+
+	<?php if ( is_active_sidebar('page-sidebar') ) : ?>
+		<div id="page-sidebar" class="sidebar" >
+			<ul><?php dynamic_sidebar( 'page-sidebar' ); ?></ul>
+		</div> <!-- end page-sidebar -->
+	<?php else : ?>
+		<?php if ( is_active_sidebar('global-sidebar') ) : ?>
+			<div id="global-sidebar" class="sidebar" >
+				<ul><?php dynamic_sidebar( 'global-sidebar' ); ?></ul>
+			</div> <!-- end global-sidebar -->
+		<?php endif; ?>
+	<?php endif; ?>
+
 </div>
 <?php endif; ?>
 

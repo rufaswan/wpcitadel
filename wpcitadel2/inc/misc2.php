@@ -70,7 +70,11 @@ add_action('wp_footer', 'citadel_wpfooter');
 function citadel_sidebars()
 {
 	$widgets = array(
-		array('Sidebar', 'sidebar')
+		array('Global Sidebar', 'global-sidebar'),
+		array('Page Sidebar', 'page-sidebar'),
+		array('Single Sidebar', 'single-sidebar'),
+		array('Search Sidebar', 'search-sidebar'),
+		array('Category Sidebar', 'category-sidebar')
 	);
 	foreach ( $widgets as $w )
 	{
@@ -90,6 +94,7 @@ add_action('widgets_init', 'citadel_sidebars');
 function citadel_navmenu()
 {
 	register_nav_menu('header-menu', 'Header Menu');
+	register_nav_menu('footer-menu', 'Footer Menu');
 }
 add_action('init', 'citadel_navmenu');
 //===============================================================

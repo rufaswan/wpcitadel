@@ -1,4 +1,4 @@
-// Default SCSS (Sassy CSS) for WP Citadel
+// Modified SCSS (Sassy CSS) for WP Citadel
 // Author by Rufas
 //
 // ---------------------------------------------------------------
@@ -94,81 +94,100 @@ a img.alignleft,
 .skip-link,
 .screen-reader-text {
 	position:absolute;
-	right:900em;
+	right:-900em;
+}
+body {
+	background-color:#fbefa7;
+	color:#814e01;
+}
+a { color:#814e01; }
+#body-wrapper {
+	margin:1em auto;
+	width:960px;
 }
 .citadel-btn {
 	@include cross-radius(20px);
-	@include cross-vert-gradient(#e81c1d, #f88686);
+	@include cross-vert-gradient(#fbefa7, #fefefe);
 	display:block;
 	padding:1em;
-	color:#fff;
+	color:#814e01;
 	font-weight:bold;
 }
 #message {
 	padding:0 1em;
-	border:2px #ccc solid;
-	background:#f88686;
+	border:2px #814e01 solid;
+	background:#fefefe;
 	margin:1em 0;
 }
 // ---------------------------------------------------------------
 // ------ header ------
 // ---------------------------------------------------------------
-#misc { background-color:#ccc; }
+#misc { background-color:#814e01; }
 header {
-	@include cross-horz-gradient(#2f2727, #1a82f7);
-	color:#fff;
+	color:#814e01;
 	padding:1em 0.3em;
 	overflow:hidden;
 
 	a {
-		color:#fff;
+		color:#814e01;
 		text-decoration:none;
 	}
 	h1 {
 		padding:0;
 		margin:0;
 	}
-	#leftheader { float:left; }
+	#leftheader {
+		background:url('09-8.png') no-repeat scroll left center transparent;
+		height:65px;
+		padding-left:80px;
+		float:left;
+	}
 	#rightheader { float:right; }
 }
 // ---------------------------------------------------------------
 // ------ nav ------
 // ---------------------------------------------------------------
 nav {
+	// img size = 642 x 230 , wrapper width = 960
+	background:url('09-31.jpg') no-repeat scroll right bottom transparent;
 	position:relative;
-	border-bottom:2px #ccc solid;
+	height:250px;
+	text-transform:uppercase;
+	font-weight:bold;
 
 	a {
-		color:#000;
+		color:#814e01;
 		text-decoration:none;
 	}
 	ul {
 		list-style: none outside none;
+		float:left;
 		margin:0;
 		padding:1em 0;
 
 		li {
-			display:inline;
-			padding:1em;
+			padding:10px 20px;
 			margin:0;
-			border-right:2px #ccc solid;
 			position:relative;
+			width:150px;
 		}
-		li:hover { background:#ccc; }
+		li:hover { background:#fefefe; }
 
 		ul {
+			float:none;
 			display:none;
 			position:absolute;
-			top:2em;
-			left:0.2em;
+			top:-20px;
+			left:190px;
 
 			li {
+				min-width:200px;
 				display:block;
 				border:none;
 				white-space:nowrap;
-				background:#fff;
-				@include cross-border(1px, 2px, 1px, 2px, #ccc, solid);
+				background:#fefefe;
 			}
+
 		}
 	}
 }
@@ -176,7 +195,12 @@ nav {
 // ---------------------------------------------------------------
 // ------ content ------
 // ---------------------------------------------------------------
-#main-wrapper { clear:both; }
+#main-wrapper {
+	clear:both;
+	background:#fefefe;
+	padding:1em;
+	overflow:hidden;
+}
 .multipost {
 	margin:1em 0.3em;
 
@@ -186,13 +210,13 @@ nav {
 		padding:0;
 	}
 	article {
-		@include cross-vert-gradient(#2f2727, #1a82f7);
 		@include cross-radius(15px);
+		border:1em #f8ebb8 solid;
 		height:250px;
-		color:#fff;
+		color:#814e01;
 		margin:1em 0;
 	}
-	a { color:#fff; }
+	a { color:#814e01; }
 	h1 {
 		padding:0;
 		margin:0;
@@ -209,7 +233,6 @@ nav {
 }
 .singlephp {
 	margin:1em auto;
-	width:90%;
 
 	article {
 		img {
@@ -229,9 +252,6 @@ nav {
 	aside img { padding:0 0.5em; }
 }
 .sidebar {
-	color:#000;
-	a { color:#0000ee; }
-
 	ul, ol {
 		list-style:none outside none;
 		padding:0;

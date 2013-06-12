@@ -13,7 +13,7 @@ $ccache = array(
 	'rss2_url'		=> get_bloginfo('rss2_url'),
 	''				=> ''
 );
-$ccache['is_child'] = ( $ccache['base_path'] == $ccache['child_path'] ) ? 1 : 0;
+$ccache['is_child'] = ( $ccache['base_path'] == $ccache['child_path'] ) ? 0 : 1;
 
 // collection of smaller functions to be used within bigger functions
 include($ccache['base_path'] . '/inc/misc.php');

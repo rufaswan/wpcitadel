@@ -6,6 +6,7 @@ function wptheme()
 		http="$HOME/Web-Server/$i/wp-content/themes/"
 		rm -vfr "$http"wpcitadel2
 		ln -s $(readlink -f ./wpcitadel2) "$http"
+		ln -s $(readlink -f ./wpcitadel2-child) "$http"
 	done
 }
 wptheme wp34 wp35

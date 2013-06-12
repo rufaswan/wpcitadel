@@ -14,23 +14,23 @@
 <?php if ( have_comments() ) : ?>
 
 	<?php if ( !empty($comments_by_type['comment']) ) : ?>
-	<h3 id="comments"><?php _e('Comments', 'wpcitadel' ); ?></h3>
+	<h3><?php _e('Comments', 'wpcitadel' ); ?></h3>
 		<ol class="commentlist">
-			<?php wp_list_comments('type=comment'); ?>
+			<?php wp_list_comments('type=comment&style=ol&avatar_size=88'); ?>
 		</ol>
 	<?php endif; ?>
 
 	<?php if ( !empty($comments_by_type['pingback']) ) : ?>
-	<h3 id="pingbacks"><?php _e('Pingbacks', 'wpcitadel' ); ?></h3>
+	<h3><?php _e('Pingbacks', 'wpcitadel' ); ?></h3>
 		<ol class="pingbacklist">
-			<?php wp_list_comments('type=pingback'); ?>
+			<?php wp_list_comments('type=pingback&style=ol'); ?>
 		</ol>
 	<?php endif; ?>
 
 	<?php if ( !empty($comments_by_type['trackback']) ) : ?>
-	<h3 id="trackbacks"><?php _e('Trackbacks', 'wpcitadel' ); ?></h3>
+	<h3><?php _e('Trackbacks', 'wpcitadel' ); ?></h3>
 		<ol class="trackbacklist">
-			<?php wp_list_comments('type=trackback'); ?>
+			<?php wp_list_comments('type=trackback&style=ol'); ?>
 		</ol>
 	<?php endif; ?>
 

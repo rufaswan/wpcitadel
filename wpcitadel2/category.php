@@ -19,6 +19,19 @@ include ($ccache['base_path'] . '/div-header.php');
 		</ul>
 	<?php endif; ?>
 	</section>
+
+	<?php if ( is_active_sidebar('category-sidebar') ) : ?>
+		<div id="category-sidebar" class="sidebar" >
+			<ul><?php dynamic_sidebar( 'category-sidebar' ); ?></ul>
+		</div> <!-- end category-sidebar -->
+	<?php else : ?>
+		<?php if ( is_active_sidebar('global-sidebar') ) : ?>
+			<div id="global-sidebar" class="sidebar" >
+				<ul><?php dynamic_sidebar( 'global-sidebar' ); ?></ul>
+			</div> <!-- end global-sidebar -->
+		<?php endif; ?>
+	<?php endif; ?>
+
 </div>
 
 <?php

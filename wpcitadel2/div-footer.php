@@ -2,8 +2,12 @@
 
 <footer>
 	<section id='leftfooter'>
+		<?php if ( has_nav_menu('footer-menu') ) : ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+		<?php endif; ?>
+
 		<p>&copy; <?php echo date('Y'); ?> <?php echo $ccache['blogname']; ?>. All rights reserved.</p>
-		<p>Powered by <a href='http://www.wordpress.org/'>WordPress</a> with <a href='http://www.wpcitadel.com/'>WP-Citadel</a></p>
+		<p>Powered by <a href='http://www.wordpress.org/'>WordPress</a> with <a href='http://rufaswan.github.io/wpcitadel/'>WP-Citadel</a></p>
 
 		<?php if ( WP_DEBUG ) : ?>
 			<p><?php echo get_num_queries(); ?> queries in <?php timer_stop(1); ?> seconds.
@@ -35,5 +39,6 @@
 <!-- to be insert by wordpress and its plugins -->
 <?php wp_footer(); ?>
 
+</div> <!-- end body-wrapper -->
 </body>
 </html>
