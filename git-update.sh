@@ -15,6 +15,7 @@ wptheme wp34 wp35
 
 rm -vf *.zip
 zip -r wpcitadel2.zip wpcitadel2
+zip -r wpcitadel2-child.zip wpcitadel2-child
 git add *
 git rm $(git ls-files --deleted)
 git remote rm origin
