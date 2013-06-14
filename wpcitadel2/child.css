@@ -125,13 +125,42 @@ nav {
 #main-wrapper {
   clear: both; }
 
-.multipost {
+.sidebar {
+  color: #fff; }
+  .sidebar a {
+    color: #fff; }
+  .sidebar ul, .sidebar ol {
+    list-style: none outside none;
+    padding: 0; }
+  .sidebar li {
+    margin: 0 1em 1em 0;
+    width: 30%;
+    float: left; }
+    .sidebar li h1 {
+      font-size: 1em;
+      color: #fff;
+      background: #2f2727;
+      padding: 0.5em 0 0.5em 1em;
+      margin: 0; }
+    .sidebar li ul, .sidebar li ol {
+      list-style: decimal outside none;
+      padding-left: 2em;
+      background: #1a82f7; }
+    .sidebar li li {
+      padding: 0;
+      margin: 0;
+      float: none;
+      width: 100%; }
+    .sidebar li table {
+      width: 100%; }
+
+.multipost #content {
   margin: 1em 0.3em; }
-  .multipost ul {
+  .multipost #content ul {
     list-style: none outside none;
     margin: 0;
     padding: 0; }
-  .multipost article {
+  .multipost #content article {
     background-color: #1a82f7;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2f2727));
     background: -webkit-linear-gradient(top, #2f2727, #1a82f7);
@@ -146,54 +175,33 @@ nav {
     height: 250px;
     color: #fff;
     margin: 1em 0; }
-  .multipost a {
+  .multipost #content a {
     color: #fff; }
-  .multipost h1 {
+  .multipost #content h1 {
     padding: 0;
     margin: 0; }
-    .multipost h1 a {
+    .multipost #content h1 a {
       text-decoration: none; }
-  .multipost article img {
+  .multipost #content article img {
     float: left;
     padding: 1em; }
-    .multipost article div {
+    .multipost #content article div {
       padding: 1em; }
 
-.singlephp {
+.singlephp #content {
   margin: 1em auto;
   width: 90%; }
-  .singlephp article img {
+  .singlephp #content article img {
     padding: 1em;
     margin: 0 auto;
     display: block; }
-    .singlephp article h1 {
+    .singlephp #content article h1 {
       margin-top: 0; }
-      .singlephp article h1 a {
+      .singlephp #content article h1 a {
         color: #000;
         text-decoration: none; }
-  .singlephp aside img {
+  .singlephp #content aside img {
     padding: 0 0.5em; }
-
-.sidebar {
-  color: #000; }
-  .sidebar a {
-    color: #00e; }
-  .sidebar ul, .sidebar ol {
-    list-style: none outside none;
-    padding: 0; }
-  .sidebar li {
-    width: 30%;
-    float: left;
-    padding: 0.9em; }
-    .sidebar li ul, .sidebar li ol {
-      list-style: decimal outside none;
-      padding-left: 2em; }
-    .sidebar li li {
-      float: none;
-      width: 100%;
-      padding: 0; }
-    .sidebar li table {
-      width: 100%; }
 
 #comments {
   font-size: 0.8em; }
@@ -207,12 +215,12 @@ nav {
     border-bottom: 1px #ccc solid;
     border-left: 2px #ccc solid;
     border-right: 2px #ccc solid; }
-    #comments ol li {
-      padding: 1em; }
-      #comments ol li img {
-        float: right; }
-      #comments ol li ol {
-        margin: 1em 0.5em; }
+  #comments ol li {
+    padding: 1em; }
+    #comments ol li img {
+      float: right; }
+    #comments ol li ol {
+      margin: 1em 0.5em; }
   #comments textarea {
     width: 100%; }
   #comments #respond {
@@ -237,8 +245,8 @@ footer {
     list-style: none outside none;
     padding: 0;
     margin: 0; }
-    footer ul li, footer ol li {
-      display: inline; }
+  footer ul li, footer ol li {
+    display: inline; }
   footer #leftfooter {
     text-align: left;
     float: left; }
@@ -288,13 +296,13 @@ footer {
     padding: 0.5em;
     width: 50%;
     border: 2px #ccc dotted; }
-    #countdown #countdownform input[type=text], #countdown #countdownform input[type=email] {
-      margin: 0.5em auto;
-      padding: 0.5em;
-      display: block; }
-    #countdown #countdownform input[type=submit] {
-      margin: 0.5em auto;
-      padding: 0.5em;
-      display: block;
-      color: #fff;
-      background: #46bcd2; }
+  #countdown #countdownform input[type=text], #countdown #countdownform input[type=email] {
+    margin: 0.5em auto;
+    padding: 0.5em;
+    display: block; }
+  #countdown #countdownform input[type=submit] {
+    margin: 0.5em auto;
+    padding: 0.5em;
+    display: block;
+    color: #fff;
+    background: #46bcd2; }

@@ -7,6 +7,7 @@
 		<?php endif; ?>
 
 		<p>&copy; <?php echo date('Y'); ?> <?php echo $ccache['blogname']; ?>. All rights reserved.</p>
+		<p><?php echo $citadel_options['child_theme']; ?> designed by <a href='<?php echo $citadel_options['child_url']; ?>' rel='nofollow'><?php echo $citadel_options['child_author']; ?></a></p>
 		<p>Powered by <a href='http://www.wordpress.org/'>WordPress</a> with <a href='http://rufaswan.github.io/wpcitadel/'>WP-Citadel</a></p>
 
 		<?php if ( WP_DEBUG ) : ?>

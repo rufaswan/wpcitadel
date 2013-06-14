@@ -199,57 +199,8 @@ nav {
 	clear:both;
 	background:#fefefe;
 	padding:1em;
+	margin:1em 0;
 	overflow:hidden;
-}
-.multipost {
-	margin:1em 0.3em;
-
-	ul {
-		list-style: none outside none;
-		margin:0;
-		padding:0;
-	}
-	article {
-		@include cross-radius(15px);
-		border:1em #f8ebb8 solid;
-		height:250px;
-		color:#814e01;
-		margin:1em 0;
-	}
-	a { color:#814e01; }
-	h1 {
-		padding:0;
-		margin:0;
-
-		a { text-decoration:none; }
-	}
-	article {
-		img {
-			float:left;
-			padding:1em;
-		}
-		div { padding:1em; }
-	}
-}
-.singlephp {
-	margin:1em auto;
-
-	article {
-		img {
-			padding:1em;
-			margin:0 auto;
-			display:block;
-		}
-		h1 {
-			margin-top:0;
-
-			a {
-				color:#000;
-				text-decoration:none;
-			}
-		}
-	}
-	aside img { padding:0 0.5em; }
 }
 .sidebar {
 	ul, ol {
@@ -258,20 +209,89 @@ nav {
 	}
 
 	li {
-		width:30%;
-		float:left;
-		padding:.9em;
+		margin-bottom:20px;
+
+		h1 {
+			font-size:1em;
+			background:#f2bd40;
+			padding:5px 0 5px 20px;
+			margin:0;
+		}
 
 		ul, ol {
 			list-style:decimal outside none;
-			padding-left:2em;
+			background:#f6e7c4;
+			margin:0 10px;
+			padding:5px 0 5px 30px;
 		}
 		li {
 			float:none;
 			width:100%;
 			padding:0;
+			margin:0;
 		}
 		table { width:100%; }
+	}
+}
+.multipost {
+	#content {
+		width:610px;
+		float:left;
+		margin:1em 0.3em;
+
+		ul {
+			list-style: none outside none;
+			margin:0;
+			padding:0;
+		}
+		article {
+			@include cross-radius(15px);
+			border:1em #f8ebb8 solid;
+			height:250px;
+			color:#814e01;
+			margin:1em 0;
+		}
+		a { color:#814e01; }
+		h1 {
+			padding:0;
+			margin:0;
+
+			a { text-decoration:none; }
+		}
+		article {
+			img {
+				float:left;
+				padding:1em;
+			}
+			div { padding:1em; }
+		}
+	}
+
+	.sidebar {
+		float:right;
+		width:295px;
+	}
+}
+.singlephp {
+	#content {
+		margin:1em auto;
+
+		article {
+			img {
+				padding:1em;
+				margin:0 auto;
+				display:block;
+			}
+			h1 {
+				margin-top:0;
+
+				a {
+					color:#000;
+					text-decoration:none;
+				}
+			}
+		}
+		aside img { padding:0 0.5em; }
 	}
 }
 // ---------------------------------------------------------------

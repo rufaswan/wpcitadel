@@ -177,60 +177,9 @@ nav {
 // ------ content ------
 // ---------------------------------------------------------------
 #main-wrapper { clear:both; }
-.multipost {
-	margin:1em 0.3em;
-
-	ul {
-		list-style: none outside none;
-		margin:0;
-		padding:0;
-	}
-	article {
-		@include cross-vert-gradient(#2f2727, #1a82f7);
-		@include cross-radius(15px);
-		height:250px;
-		color:#fff;
-		margin:1em 0;
-	}
-	a { color:#fff; }
-	h1 {
-		padding:0;
-		margin:0;
-
-		a { text-decoration:none; }
-	}
-	article {
-		img {
-			float:left;
-			padding:1em;
-		}
-		div { padding:1em; }
-	}
-}
-.singlephp {
-	margin:1em auto;
-	width:90%;
-
-	article {
-		img {
-			padding:1em;
-			margin:0 auto;
-			display:block;
-		}
-		h1 {
-			margin-top:0;
-
-			a {
-				color:#000;
-				text-decoration:none;
-			}
-		}
-	}
-	aside img { padding:0 0.5em; }
-}
 .sidebar {
-	color:#000;
-	a { color:#0000ee; }
+	color:#ffffff;
+	a { color:#ffffff; }
 
 	ul, ol {
 		list-style:none outside none;
@@ -238,20 +187,84 @@ nav {
 	}
 
 	li {
+		margin:0 1em 1em 0;
 		width:30%;
 		float:left;
-		padding:.9em;
 
+		h1 {
+			font-size:1em;
+			color:#ffffff;
+			background:#2f2727;
+			padding:0.5em 0 0.5em 1em;
+			margin:0;
+		}
 		ul, ol {
 			list-style:decimal outside none;
 			padding-left:2em;
+			background:#1a82f7;
 		}
 		li {
+			padding:0;
+			margin:0;
 			float:none;
 			width:100%;
-			padding:0;
 		}
 		table { width:100%; }
+	}
+}
+.multipost {
+	#content {
+		margin:1em 0.3em;
+
+		ul {
+			list-style: none outside none;
+			margin:0;
+			padding:0;
+		}
+		article {
+			@include cross-vert-gradient(#2f2727, #1a82f7);
+			@include cross-radius(15px);
+			height:250px;
+			color:#fff;
+			margin:1em 0;
+		}
+		a { color:#fff; }
+		h1 {
+			padding:0;
+			margin:0;
+
+			a { text-decoration:none; }
+		}
+		article {
+			img {
+				float:left;
+				padding:1em;
+			}
+			div { padding:1em; }
+		}
+	}
+}
+.singlephp {
+	#content {
+		margin:1em auto;
+		width:90%;
+
+		article {
+			img {
+				padding:1em;
+				margin:0 auto;
+				display:block;
+			}
+			h1 {
+				margin-top:0;
+
+				a {
+					color:#000;
+					text-decoration:none;
+				}
+			}
+		}
+		aside img { padding:0 0.5em; }
 	}
 }
 // ---------------------------------------------------------------

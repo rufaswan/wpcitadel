@@ -1,28 +1,42 @@
 <?php defined('ABSPATH') or die('No direct script access.');
 
+$theme_data = get_file_data(
+	$this->ccache['child_path']."/style.css",
+	array(
+		"Theme Name" => "Theme Name",
+		"Theme URI" => "Theme URI",
+		"Author" => "Author",
+		"Author URI" => "Author URI"
+	)
+);
+
 // set the defaults
 $default_options = array(
-	'noautop' => false,
-	'nosmartq' => false,
-	'sitelocked' => false,
+	'child_theme'  => $theme_data['Theme Name'],
+	'child_author' => $theme_data['Author'],
+	'child_url'    => $theme_data['Author URI'],
+	'noautop'      => false,
+	'nosmartq'     => false,
+	'sitelocked'   => false,
 	'sitelockuser' => '',
-	'load_js' => 'jquery,modernizr,jquery-countdown',
-	'load_css' => 'normalize',
-	'extra_head' => '',
-	'extra_foot' => '',
-	'sitemap' => 'posts-by-alpha,categories',
+	'load_js'      => 'jquery,modernizr,jquery-countdown',
+	'load_css'     => 'normalize',
+	'extra_head'   => '',
+	'extra_foot'   => '',
+	'sitemap'      => 'posts-by-alpha,categories',
 	'contact_sentto' => '',
 	'cnt_time' => time() + 365*24*60*60,
 	'cnt_form' => '',
-	'about_name' => '',
-	'about_desc' => '',
+	'about_name'    => '',
+	'about_desc'    => '',
 	'about_address' => '',
-	'about_phone' => '',
-	'about_hours' => '',
-	'about_facebook' => '',
-	'about_twitter' => '',
+	'about_phone'   => '',
+	'about_hours'   => '',
+	'about_facebook'   => '',
+	'about_twitter'    => '',
 	'about_googleplus' => '',
-	'' => '');
+	'' => ''
+);
 
 // update your default settings...
 $options = get_option($this->opt_name);
